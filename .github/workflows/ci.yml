@@ -54,10 +54,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Scan tracked dependencies and configuration
+      - name: Scan tracked dependencies and secrets
         run: >-
           docker run --rm -v "$PWD:/workspace:ro"
-          aquasec/trivy:0.76.0 fs --scanners vuln
+          aquasec/trivy:0.76.0 fs --scanners vuln,secret
           --severity CRITICAL,HIGH --exit-code 1 --ignore-unfixed /workspace
   container-security:
     runs-on: ubuntu-latest
