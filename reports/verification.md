@@ -4,6 +4,8 @@ This report distinguishes executed behavior from configuration and production re
 
 GitHub handoff, 24 October 2026: the project is now published at [gajendra54-design/Explainable-Fraud-Radar](https://github.com/gajendra54-design/Explainable-Fraud-Radar). Live remote verification results are available in [GitHub Actions](https://github.com/gajendra54-design/Explainable-Fraud-Radar/actions/workflows/ci.yml). This report retains the local verification snapshot below; publishing source code does not deploy the running application.
 
+The first remote application build, PostgreSQL tests and browser workflow passed. Remote security scanning found newly reported fixable issues in Zod 3.24.1 and Brotli 1.2.0-r1. The frontend now uses Zod 4.6.6 with a compatible form resolver, and its container installs Brotli 1.2.1-r0 or newer while retaining its non-root runtime. An empty-login regression test covers validation errors after the major Zod upgrade. The unavailable Trivy action reference was replaced with the pinned scanner container; dependency, secret and image scans remain enforced. The 24 October backend rescan still reports eight unique unfixed Debian advisories and no critical findings; see `backend-image-audit-2026-10-24.json`. The 23 October scan reports below are historical snapshots, not assertions about today's advisory database.
+
 ## Executed checks
 
 - Local Python 3.12 test suite: **62 passed** in 14.48 seconds. Evidence: `pytest.xml`. Includes durable job recovery/fencing, session revocation, shared login throttling, immutable audit records, retention, delayed labels and validated API responses. One upstream Starlette TestClient deprecation warning remains.

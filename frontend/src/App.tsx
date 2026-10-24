@@ -129,6 +129,11 @@ export default function App() {
                 {...form.register("password")}
               />
             </label>
+            {form.formState.errors.password && (
+              <small className="error">
+                {form.formState.errors.password.message}
+              </small>
+            )}
             {error && (
               <p className="error" role="alert">
                 {error}
