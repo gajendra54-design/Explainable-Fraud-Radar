@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.3033699999999997">
+<testsuite name="login-validation.spec.ts" timestamp="2026-10-24T06:20:44.748Z" hostname="" tests="1" failures="0" skipped="0" time="1.656" errors="0">
+<testcase name="empty login shows validation messages without a request or runtime error" classname="login-validation.spec.ts" time="1.656">
+</testcase>
+</testsuite>
+</testsuites>
