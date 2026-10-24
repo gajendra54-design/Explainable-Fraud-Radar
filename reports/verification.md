@@ -2,6 +2,8 @@
 
 This report distinguishes executed behavior from configuration and production recommendations. All banking records are synthetic. No external bank integration, real money movement or public deployment occurred.
 
+GitHub handoff, 24 October 2026: the project is now published at [gajendra54-design/Explainable-Fraud-Radar](https://github.com/gajendra54-design/Explainable-Fraud-Radar). Live remote verification results are available in [GitHub Actions](https://github.com/gajendra54-design/Explainable-Fraud-Radar/actions/workflows/ci.yml). This report retains the local verification snapshot below; publishing source code does not deploy the running application.
+
 ## Executed checks
 
 - Local Python 3.12 test suite: **62 passed** in 14.48 seconds. Evidence: `pytest.xml`. Includes durable job recovery/fencing, session revocation, shared login throttling, immutable audit records, retention, delayed labels and validated API responses. One upstream Starlette TestClient deprecation warning remains.
@@ -44,7 +46,7 @@ PostgreSQL stores normalized customers, accounts, transactions, model metadata, 
 
 ## Remaining limitations and intentionally simplified requirements
 
-- No public deployment, remote GitHub CI run or hosted GitHub repository has been claimed. A local Git repository and CI workflow are prepared.
+- Public application deployment remains pending. The source repository is hosted on GitHub and remote CI has been launched; use the workflow link above for its current result.
 - The backend image retains eight unique Debian advisories with no fixed versions listed, represented by 44 affected-package findings. Application package audits are separate from container OS scans. The unused runtime packaging tools were removed after the initial scan. Review the remaining image advisories before external deployment; do not treat a clean Python/npm package audit as a clean operating-system image.
 - A local artifact registry is used instead of an MLflow server. Exact logistic attribution replaces SHAP. Statistical monitoring replaces Evidently. These are documented substitutions permitted by the brief.
 - Durable jobs and failed-login limits now use the database. Training persistence is serialized by a global lease; this is not a distributed compute engine. Trusted proxy configuration is needed to distinguish public source IPs behind a deployment proxy.
