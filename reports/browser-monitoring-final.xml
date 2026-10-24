@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="7.403208">
+<testsuite name="monitoring.spec.ts" timestamp="2026-10-23T15:02:34.100Z" hostname="" tests="1" failures="0" skipped="0" time="5.64" errors="0">
+<testcase name="monitoring preserves an investigation and revokes logout" classname="monitoring.spec.ts" time="5.64">
+</testcase>
+</testsuite>
+</testsuites>

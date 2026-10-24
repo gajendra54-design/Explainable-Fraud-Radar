@@ -1,0 +1,43 @@
+{
+  "synthetic": true,
+  "all": {
+    "legitimate": 94078,
+    "new_device": 840,
+    "unusual_time": 824,
+    "threshold_evasion": 840,
+    "velocity": 866,
+    "geographic": 870,
+    "large_amount": 849,
+    "account_takeover": 833
+  },
+  "train": {
+    "legitimate": 56429,
+    "new_device": 516,
+    "unusual_time": 512,
+    "threshold_evasion": 508,
+    "velocity": 502,
+    "geographic": 526,
+    "large_amount": 506,
+    "account_takeover": 501
+  },
+  "validation": {
+    "legitimate": 18789,
+    "velocity": 183,
+    "new_device": 179,
+    "account_takeover": 172,
+    "geographic": 176,
+    "threshold_evasion": 169,
+    "large_amount": 181,
+    "unusual_time": 151
+  },
+  "test": {
+    "legitimate": 18860,
+    "velocity": 181,
+    "threshold_evasion": 163,
+    "unusual_time": 161,
+    "geographic": 168,
+    "new_device": 145,
+    "account_takeover": 160,
+    "large_amount": 162
+  }
+}

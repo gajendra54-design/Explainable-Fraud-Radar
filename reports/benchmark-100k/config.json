@@ -1,0 +1,8 @@
+{
+  "transactions": 100000,
+  "customers": 1000,
+  "seed": 42,
+  "fraud_rate": 0.06,
+  "days": 90,
+  "output": "reports/generated-100k"
+}

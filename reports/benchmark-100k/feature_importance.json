@@ -1,0 +1,67 @@
+{
+  "model_version": "lr-v1-652d1d411f",
+  "source": "Fitted training estimators only",
+  "limitations": "Standardized logistic coefficients measure model log-odds sensitivity; forest impurity importance can favor continuous or high-cardinality features. Neither proves causality.",
+  "features": [
+    {
+      "feature": "log_amount",
+      "logistic_standardized_coefficient": -0.5454034521353504,
+      "random_forest_impurity_importance": 0.016421770305120934
+    },
+    {
+      "feature": "amount_ratio",
+      "logistic_standardized_coefficient": -0.09977896127123016,
+      "random_forest_impurity_importance": 0.02680238947577826
+    },
+    {
+      "feature": "count_1h",
+      "logistic_standardized_coefficient": 0.35436024555415796,
+      "random_forest_impurity_importance": 0.013912030144641414
+    },
+    {
+      "feature": "count_24h",
+      "logistic_standardized_coefficient": -0.12683175966002583,
+      "random_forest_impurity_importance": 0.002397261206525226
+    },
+    {
+      "feature": "log_spend_24h",
+      "logistic_standardized_coefficient": 0.19303243430979078,
+      "random_forest_impurity_importance": 0.007177215249863186
+    },
+    {
+      "feature": "minutes_since_previous",
+      "logistic_standardized_coefficient": 0.06724267494974813,
+      "random_forest_impurity_importance": 0.045374236829572416
+    },
+    {
+      "feature": "new_device",
+      "logistic_standardized_coefficient": 0.49792674211211163,
+      "random_forest_impurity_importance": 0.21619306012835332
+    },
+    {
+      "feature": "new_merchant",
+      "logistic_standardized_coefficient": -0.012460782910738464,
+      "random_forest_impurity_importance": 0.0012579402212901547
+    },
+    {
+      "feature": "foreign_country",
+      "logistic_standardized_coefficient": 0.36154704002143423,
+      "random_forest_impurity_importance": 0.19102876806130578
+    },
+    {
+      "feature": "night_time",
+      "logistic_standardized_coefficient": 0.27270444343526734,
+      "random_forest_impurity_importance": 0.0063509971213388805
+    },
+    {
+      "feature": "ip_risk",
+      "logistic_standardized_coefficient": 1.0028786972421047,
+      "random_forest_impurity_importance": 0.46373627310824955
+    },
+    {
+      "feature": "log_account_age",
+      "logistic_standardized_coefficient": 0.007357428580261879,
+      "random_forest_impurity_importance": 0.009348058147960855
+    }
+  ]
+}

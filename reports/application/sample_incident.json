@@ -1,0 +1,228 @@
+{
+  "synthetic_only": true,
+  "source": "Executed application investigation; actual persisted audit events",
+  "disposition_is_verified_ground_truth": false,
+  "id": 293,
+  "transaction_id": "TXN-042-0002963",
+  "status": "Resolved",
+  "assigned_to": "admin",
+  "disposition": "Inconclusive",
+  "created_at": "2026-10-23T10:27:04.712432+00:00",
+  "risk_score": 21.57,
+  "risk_band": "low",
+  "model_version": "lr-v1-b725bf7e38",
+  "transaction": {
+    "transaction_id": "TXN-042-0002963",
+    "account_id": "ACC-00114",
+    "customer_id": "CUS-00114",
+    "timestamp": "2026-03-31T03:05:41.261801Z",
+    "amount": 2192.65,
+    "currency": "LKR",
+    "merchant_id": "MER-0059",
+    "merchant_category": "Electronics",
+    "channel": "POS",
+    "country_code": "LK",
+    "customer_country": "LK",
+    "device_id": "DEV-00114-2962",
+    "ip_risk_indicator": 0.4679,
+    "account_age_days": 260,
+    "ground_truth_fraud_label": 1,
+    "fraud_scenario_type": "geographic"
+  },
+  "prediction": {
+    "probability": 0.21565765071996734,
+    "fraud_probability": 0.21565765071996734,
+    "risk_score": 21.57,
+    "risk_level": "low",
+    "risk_band": "low",
+    "decision": "review",
+    "is_alert": true,
+    "anomaly_score": 0.8627777777777778,
+    "rule_score": 0,
+    "rule_hits": [],
+    "triggered_rules": [],
+    "model_version": "lr-v1-b725bf7e38",
+    "threshold": 0.12500000000000003,
+    "prediction_timestamp": "2026-10-23T10:27:00.086239+00:00",
+    "features": {
+      "log_amount": 7.693322102129608,
+      "amount_ratio": 0.5259187658004691,
+      "count_1h": 0.0,
+      "count_24h": 0.0,
+      "log_spend_24h": 0.0,
+      "minutes_since_previous": 1440.0,
+      "new_device": 1.0,
+      "new_merchant": 1.0,
+      "foreign_country": 0.0,
+      "night_time": 1.0,
+      "ip_risk": 0.4679,
+      "log_account_age": 5.564520407322694
+    },
+    "reasons": [
+      "Synthetic IP risk indicator",
+      "Device not previously seen for customer",
+      "Prior 24-hour spend (natural log)"
+    ],
+    "explanation": {
+      "method": "Exact logistic linear attribution",
+      "units": "log-odds",
+      "baseline": -4.27609285419946,
+      "output_log_odds": -1.291153395086793,
+      "probability": 0.21565765071996734,
+      "contributions": [
+        {
+          "feature": "ip_risk",
+          "description": "Synthetic IP risk indicator",
+          "value": 0.4679,
+          "baseline": 0.15140905555555537,
+          "contribution": 1.9357558095982552,
+          "direction": "increases"
+        },
+        {
+          "feature": "new_device",
+          "description": "Device not previously seen for customer",
+          "value": 1.0,
+          "baseline": 0.19166666666666668,
+          "contribution": 0.9349452378869946,
+          "direction": "increases"
+        },
+        {
+          "feature": "log_spend_24h",
+          "description": "Prior 24-hour spend (natural log)",
+          "value": 0.0,
+          "baseline": 1.3925072529128464,
+          "contribution": 0.16869612555059782,
+          "direction": "increases"
+        },
+        {
+          "feature": "night_time",
+          "description": "Transaction between midnight and 05:00 UTC",
+          "value": 1.0,
+          "baseline": 0.20666666666666667,
+          "contribution": 0.16724766669468605,
+          "direction": "increases"
+        },
+        {
+          "feature": "log_amount",
+          "description": "Transaction amount (natural log of 1 + LKR)",
+          "value": 7.693322102129608,
+          "baseline": 7.9108216928937125,
+          "contribution": 0.1323441188558801,
+          "direction": "increases"
+        },
+        {
+          "feature": "foreign_country",
+          "description": "Country differs from customer home",
+          "value": 0.0,
+          "baseline": 0.06944444444444445,
+          "contribution": -0.1292033297464678,
+          "direction": "decreases"
+        },
+        {
+          "feature": "log_account_age",
+          "description": "Account age (natural log days)",
+          "value": 5.564520407322694,
+          "baseline": 7.020161826803597,
+          "contribution": -0.11454946969519644,
+          "direction": "decreases"
+        },
+        {
+          "feature": "count_24h",
+          "description": "Prior transactions in 24 hours",
+          "value": 0.0,
+          "baseline": 0.18777777777777777,
+          "contribution": -0.07113277712437883,
+          "direction": "decreases"
+        },
+        {
+          "feature": "minutes_since_previous",
+          "description": "Minutes since prior transaction (capped at one day)",
+          "value": 1440.0,
+          "baseline": 1302.040923453424,
+          "contribution": -0.05149517552694859,
+          "direction": "decreases"
+        },
+        {
+          "feature": "new_merchant",
+          "description": "Merchant not previously seen for customer",
+          "value": 1.0,
+          "baseline": 0.9411111111111111,
+          "contribution": 0.04566662085391147,
+          "direction": "increases"
+        },
+        {
+          "feature": "count_1h",
+          "description": "Prior transactions in one hour",
+          "value": 0.0,
+          "baseline": 0.01888888888888889,
+          "contribution": -0.044809013031444495,
+          "direction": "decreases"
+        },
+        {
+          "feature": "amount_ratio",
+          "description": "Amount divided by prior customer median",
+          "value": 0.5259187658004691,
+          "baseline": 2.0504669779879108,
+          "contribution": 0.011473644796777637,
+          "direction": "increases"
+        }
+      ],
+      "model_version": "lr-v1-b725bf7e38",
+      "limitations": "Attributions explain model behavior, not causation or confirmed fraud. Baseline is the training mean feature vector."
+    }
+  },
+  "notes": [
+    {
+      "id": 1,
+      "case_id": 293,
+      "author": "admin",
+      "text": "Automated E2E review: synthetic evidence inspected; no enforcement action.",
+      "created_at": "2026-10-23T10:46:02.791012+00:00"
+    }
+  ],
+  "history": [
+    {
+      "id": 3,
+      "case_id": 293,
+      "actor": "admin",
+      "action": "assigned",
+      "details": {
+        "previous": null,
+        "assigned_to": "admin"
+      },
+      "created_at": "2026-10-23T10:46:02.525095+00:00"
+    },
+    {
+      "id": 4,
+      "case_id": 293,
+      "actor": "admin",
+      "action": "status_changed",
+      "details": {
+        "previous": "Assigned",
+        "status": "Under Review"
+      },
+      "created_at": "2026-10-23T10:46:02.690802+00:00"
+    },
+    {
+      "id": 5,
+      "case_id": 293,
+      "actor": "admin",
+      "action": "note_added",
+      "details": {
+        "text": "Automated E2E review: synthetic evidence inspected; no enforcement action."
+      },
+      "created_at": "2026-10-23T10:46:02.787486+00:00"
+    },
+    {
+      "id": 6,
+      "case_id": 293,
+      "actor": "admin",
+      "action": "disposition_recorded",
+      "details": {
+        "disposition": "Inconclusive",
+        "verified_ground_truth_changed": false
+      },
+      "created_at": "2026-10-23T10:46:03.066031+00:00"
+    }
+  ]
+}

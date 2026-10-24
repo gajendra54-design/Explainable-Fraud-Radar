@@ -1,0 +1,15 @@
+.git
+.env
+.venv
+**/node_modules
+**/dist
+**/__pycache__
+**/.pytest_cache
+*.db
+artifacts
+data/generated
+reports/generated
+reports
+.chart-data-*
+.presentation-*
+.portfolio-validation.json

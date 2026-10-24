@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="15.626485">
+<testsuite name="workflow.spec.ts" timestamp="2026-10-23T12:07:24.368Z" hostname="" tests="1" failures="0" skipped="0" time="13.562" errors="0">
+<testcase name="investigator can inspect evidence and record an auditable decision" classname="workflow.spec.ts" time="13.562">
+</testcase>
+</testsuite>
+</testsuites>

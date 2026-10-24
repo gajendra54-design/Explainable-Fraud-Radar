@@ -1,0 +1,14 @@
+[
+  {
+    "view": "login",
+    "violations": []
+  },
+  {
+    "view": "overview",
+    "violations": []
+  },
+  {
+    "view": "transactions",
+    "violations": []
+  }
+]

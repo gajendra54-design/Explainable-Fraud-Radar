@@ -1,0 +1,70 @@
+name: explainable-fraud-radar
+services:
+  postgres:
+    image: postgres:17.11-alpine
+    environment:
+      POSTGRES_DB: fraud_radar
+      POSTGRES_USER: fraud_radar
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/configure.ps1 first}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U fraud_radar -d fraud_radar"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+psycopg://fraud_radar:${POSTGRES_PASSWORD}@postgres:5432/fraud_radar
+      JWT_SECRET: ${JWT_SECRET:?Run scripts/configure.ps1 first}
+      BOOTSTRAP_USERNAME: ${BOOTSTRAP_USERNAME:-admin}
+      BOOTSTRAP_PASSWORD: ${BOOTSTRAP_PASSWORD:?Set a strong bootstrap password}
+      ENVIRONMENT: production
+      CORS_ORIGINS: http://localhost:8087
+      ARTIFACT_DIR: /app/artifacts
+    volumes:
+      - model_artifacts:/app/artifacts
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+  worker:
+    image: explainable-fraud-radar-backend:latest
+    command: [python, -m, backend.app.worker]
+    environment:
+      DATABASE_URL: postgresql+psycopg://fraud_radar:${POSTGRES_PASSWORD}@postgres:5432/fraud_radar
+      JWT_SECRET: ${JWT_SECRET:?Run scripts/configure.ps1 first}
+      ENVIRONMENT: production
+      ARTIFACT_DIR: /app/artifacts
+    volumes:
+      - model_artifacts:/app/artifacts
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "127.0.0.1:${UI_PORT:-8087}:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, wget, -q, --spider, http://127.0.0.1:8080/]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+volumes:
+  postgres_data:
+  model_artifacts:

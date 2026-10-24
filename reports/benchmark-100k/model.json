@@ -1,0 +1,39 @@
+{
+  "version": "lr-v1-652d1d411f",
+  "model_version": "lr-v1-652d1d411f",
+  "algorithm": "Logistic regression",
+  "status": "demo-approved",
+  "seed": 42,
+  "features": [
+    "log_amount",
+    "amount_ratio",
+    "count_1h",
+    "count_24h",
+    "log_spend_24h",
+    "minutes_since_previous",
+    "new_device",
+    "new_merchant",
+    "foreign_country",
+    "night_time",
+    "ip_risk",
+    "log_account_age"
+  ],
+  "feature_version": "chronological-v1",
+  "threshold": 0.15000000000000002,
+  "risk_bands": [
+    25,
+    50,
+    75
+  ],
+  "rule_config": {},
+  "train_count": 60000,
+  "validation_count": 20000,
+  "test_count": 20000,
+  "train_end": "2026-02-24T04:03:27.196408+00:00",
+  "validation_start": "2026-02-24T04:04:09.037714+00:00",
+  "validation_end": "2026-03-13T22:56:50.022065+00:00",
+  "test_start": "2026-03-13T22:56:50.376981+00:00",
+  "scoring_strategy": "100 \u00d7 logistic probability; anomaly percentile and rule score shown separately",
+  "selection": "Validation F1 maximized subject to 15% alert capacity where feasible",
+  "approval": "Synthetic demo only; no automatic model promotion"
+}

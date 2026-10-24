@@ -1,0 +1,10 @@
+{
+  "records": 100000,
+  "duration_seconds": 36.76897140004439,
+  "status": "completed",
+  "model_version": "lr-v1-652d1d411f",
+  "raw": "raw_transactions.jsonl",
+  "curated": "curated_transactions.jsonl",
+  "features": "features.csv",
+  "labels": "labels.csv"
+}

@@ -1,0 +1,14 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="23.4743">
+<testsuite name="accessibility.spec.ts" timestamp="2026-10-23T14:57:36.874Z" hostname="" tests="1" failures="0" skipped="0" time="6.8" errors="0">
+<testcase name="login and primary workspace views pass automated WCAG checks" classname="accessibility.spec.ts" time="6.8">
+</testcase>
+</testsuite>
+<testsuite name="monitoring.spec.ts" timestamp="2026-10-23T14:57:36.874Z" hostname="" tests="1" failures="0" skipped="0" time="9.116" errors="0">
+<testcase name="monitoring preserves an investigation and revokes logout" classname="monitoring.spec.ts" time="9.116">
+</testcase>
+</testsuite>
+<testsuite name="workflow.spec.ts" timestamp="2026-10-23T14:57:36.874Z" hostname="" tests="1" failures="0" skipped="0" time="5.17" errors="0">
+<testcase name="investigator can inspect evidence and record an auditable decision" classname="workflow.spec.ts" time="5.17">
+</testcase>
+</testsuite>
+</testsuites>

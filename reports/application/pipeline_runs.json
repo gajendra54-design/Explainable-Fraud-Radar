@@ -1,0 +1,26 @@
+[
+  {
+    "id": "5daf5988-52ae-4370-97d5-0d5f0008725f",
+    "status": "completed",
+    "started_at": "2026-10-23T10:26:55.376109+00:00",
+    "completed_at": "2026-10-23T10:27:05.071615+00:00",
+    "processed": 3000,
+    "rejected": 0,
+    "duplicates": 0,
+    "duration_seconds": 9.671852800005581,
+    "config": {
+      "transactions": 3000,
+      "seed": 42,
+      "customers": 180,
+      "fraud_rate": 0.06
+    },
+    "error": null,
+    "job_type": "training",
+    "attempts": 0,
+    "max_attempts": 3,
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "heartbeat_at": null,
+    "next_attempt_at": null
+  }
+]
